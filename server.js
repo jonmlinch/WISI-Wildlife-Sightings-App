@@ -10,10 +10,12 @@ var session = require('express-session'); //Used to create sessions,
 var app = express();
 
 //Set view engine
-
+app.set('view engine', 'ejs');
 
 //Set middlewares using app.use
-
+app.use(express.static(__dirname + '/public'));
+app.use(ejsLayouts);
+app.use(bodyParser.urlencoded({extended: false}));
 
 //Layout initial routes
 
