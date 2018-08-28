@@ -1,0 +1,12 @@
+.nav{
+	background-color: black;
+}
+
+.nav-item {
+	margin: 0 10px;
+}
+
+#login {
+background-color: red;
+color: black;
+}
