@@ -1,0 +1,109 @@
+<!-- Default form register -->
+<form  method="POST" action="/auth/signup" class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Sign up</p>
+
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- First name -->
+            <input type="text" name="firstname" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+            <!-- Last name -->
+            <input type="text" name="lastname" class="form-control" placeholder="Last name">
+        </div>
+    </div>
+
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- DOB -->
+            <input type="date" name="dob" class="form-control" placeholder="">
+        </div>
+        <div class="col">
+            <!-- Last name -->
+            <div class="custom-control custom-radio custom-control-inline">
+			  <input type="radio" class="custom-control-input" id="defaultchecked" value="female" name="gender" checked>
+			  <label class="custom-control-label" for="defaultchecked">Female</label>
+			 </div>
+			 <div class="custom-control custom-radio custom-control-inline">
+			  <input type="radio" class="custom-control-input" id="defaultUnchecked" value="male" name="gender">
+			  <label class="custom-control-label" for="defaultUnchecked">Male</label>
+			</div>
+        </div>
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        These help with land use demographics
+    	</small>
+    </div>
+
+    <!-- E-mail -->
+    <input type="email" name="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+    <!-- Password -->
+    <input type="password" name="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        At least 8 characters and 1 digit
+    </small>
+
+    <!-- Newsletter *** Don't need now but could be a cool feature later ****-->
+    <!-- <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
+        <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>
+    </div> -->
+
+    <!-- Sign up button -->
+    <button class="btn btn-info my-4 btn-block" type="submit">Sign up!</button>
+
+    <!-- Social register -->
+    <p>or sign up with:</p>
+
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fa fa-facebook"></i> Facebook 
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fa fa-twitter"></i> Twitter
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fa fa-linkedin"></i> LinkedIn
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fa fa-github"></i> GitHub
+    </a>
+
+    <hr>
+
+    <!-- Terms of service -->
+    <!-- <p>By clicking
+        <em>Sign up</em> you agree to our
+        <a href="" target="_blank">terms of service</a> and
+        <a href="" target="_blank">terms of service</a>. </p> -->
+
+</form>
+<!-- Default form register -->
+
+<!-- <form method="POST" action="/auth/signup">
+	<div class="form-group">
+		<label>First Name:</label>
+		<input type="text" name="firstname" id="firstname" class="form-control col-4">
+	</div>
+	<div class="form-group">
+		<label>Last Name:</label>
+		<input type="text" name="lastname" id="lastname" class="form-control col-4">
+	</div>
+	<div class="form-group">
+		<label>Date of Birth:</label>
+		<input type="date" name="dob" id="dob" class="form-control col-4">
+	</div>
+	<div class="form-group">
+		<label>Profile Pic:</label>
+		<input type="text" name="image" id="image" class="form-control col-4">
+	</div>
+	<div class="form-group">
+		<label>Email:</label>
+		<input type="email" name="email" id="email" class="form-control col-4">
+	</div>
+	<div class="form-group">
+		<label>Password:</label>
+		<input type="password" name="password" id="password" class="form-control col-4">
+	</div>
+	<input type="submit" name="" class="btn btn-primary">
+</form> -->

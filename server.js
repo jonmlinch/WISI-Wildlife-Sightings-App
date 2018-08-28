@@ -18,11 +18,13 @@ app.use(ejsLayouts); //specifies use of ejs for front end views
 app.use(bodyParser.urlencoded({extended: false})); //Parses url encoded data
 
 //Layout initial routes
-app.get('/', function(req, res){
+app.get('/', function(req, res){ //renders the home page when going to local host 3000
 	res.render('home')
 })
 
 
+//add controllers
+app.use('/auth', require('./controllers/auth'))
 
 
 
