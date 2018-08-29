@@ -1,6 +1,6 @@
 //Requires
 var express = require('express');
-var passport = require('../configure/passportConfig');
+var passport = require('../config/passportConfig');
 
 //Include models
 var db = require('../models')
@@ -16,6 +16,7 @@ router.get('/login', function(req, res){
 router.get('/signup', function(req, res){
 	res.render('auth/signup') //Tells what to show when someone goes to signup page
 });
+
 
 //create POST routes
 router.post('/signup', function(req, res){
@@ -37,10 +38,12 @@ router.post('/signup', function(req, res){
 	})
 });
 
-router.post('/login', function(req, res){
-	console.log(req.body);
-	res.send('You logged in')
-})
+router.post('/login', passport.authenticate('local', { //On the login post, I want to authenticate using the local authentication
+	successRedirect: '/profile', //This is where I want to go if successful
+	successFlash: 'Welcome back, ' + db.user.firstname, //Display this message upon login
+	failureRedirect: '/auth/login', //This where I want to go if login fails
+	failureFlash: 'email or password incorrect, please try again!' //Display this message if failed login
+}))
 
 
 
