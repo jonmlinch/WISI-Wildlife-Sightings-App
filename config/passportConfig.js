@@ -32,7 +32,7 @@ passport.use(new passportLocalStrategy({ //This is using the username/password l
 	db.user.findOne({ //Look for one entry in the user model that match the username based on email
 		where: {email: username} //I'm looking for something in the email field that matches the 'username' field that was submitted
 	}).then(function(foundUser){ //Specifies what to do if I find a matching user
-		if(!foundUser || foundUser.password != password){ //*** Not sure what the 'isValidPassword' comes from and couldn't find it in docs. I assume it checks the password to see if it is a match
+		if(!foundUser || !foundUser.isValidPassword(password)){ //*** Not sure what the 'isValidPassword' comes from and couldn't find it in docs. I assume it checks the password to see if it is a match
 			console.log('something does not add up')
 			callback(null, null); //If no match found the run this function
 		} else {
