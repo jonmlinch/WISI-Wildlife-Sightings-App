@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     dob: DataTypes.DATE,
     admin: DataTypes.BOOLEAN,
-    image: DataTypes.STRING
+    image: DataTypes.STRING,
+    gender: DataTypes.STRING
   }, {});
   user.associate = function(models) {
     models.user.hasMany(models.wildlife);

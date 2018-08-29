@@ -24,12 +24,13 @@ app.get('/', function(req, res){ //renders the home page when going to local hos
 
 
 //add controllers
-app.use('/auth', require('./controllers/auth'))
+app.use('/auth', require('./controllers/auth')); //Allows access to the auth js in the controller folder
+app.use('/profile', require('./controllers/profile')) //Allows access to the profile js in the controller folder
 
 
 
 //Listen
-app.listen(3000, function(){
+app.listen(3000, function(){ //Allows me to listen to the smooth sound of port 3000
 	console.log("You are now listening to the smooth sounds of Port 3000 in morning")
 })
 
