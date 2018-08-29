@@ -1,6 +1,6 @@
 //Requires
 var express = require('express');
-//*** make sure to require passport when getting to auth ***
+var passport = require('../configure/passportConfig');
 
 //Include models
 var db = require('../models')

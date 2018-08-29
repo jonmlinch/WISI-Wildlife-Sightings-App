@@ -29,7 +29,22 @@ passport.use(new passportLocalStrategy({ //This is using the username/password l
 	usernameField: 'email', //Here I specify that the user name is the email from the user database
 	passwordField: 'password' //Here I specify that the password is the password logged in the user database
 }, function(username, password, callback){ //Function to verify and tell passport what do if match/no match
-	db.user.findOne({ //Look for one entry in the user model that match the username/password
+	db.user.findOne({ //Look for one entry in the user model that match the username based on email
 		where: {email: username} //I'm looking for something in the email field that matches the 'username' field that was submitted
+	}).then(function(foundUser){ //Specifies what to do if I find a matching user
+		if(!foundUser || !foundUser.isValidPassword(password)){ //*** Not sure what the 'isValidPassword' comes from and couldn't find it in docs. I assume it checks the password to see if it is a match
+			callback(null, null); //If no match found the run this function
+		} else {
+			callback(null, foundUser); //If both username and password match then return the user's information
+		}
 	})
 }))
+
+
+module.exports = passport;
+
+
+
+
+
+
