@@ -1,4 +1,4 @@
-.nav{
+.navbar{
 	background-color: black;
 }
 
@@ -9,4 +9,10 @@
 #login {
 background-color: red;
 color: black;
+}
+
+#logo {
+	height: 80%;
+	width: 80%;
+	margin: 0;
 }

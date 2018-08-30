@@ -1,14 +1,31 @@
-<ul class="nav nav-pills justify-content-end">
-  <li class="nav-item">
-    <a class="nav-link" href="/">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">About</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" id="login" href="/auth/login">Login</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" href="/auth/signup">Sign Up</a>
-  </li>
-</ul>
+
+<nav class="navbar">
+  <a class="nav-link" href="/"><img id="logo" src="http://res.cloudinary.com/surfjon2/image/upload/c_scale,w_154/v1535649516/wisi-logo.png"></a>
+  <ul class="nav nav-pills justify-content-end">
+    <%if(currentUser){%>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile/pastsight">Past Sightings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/profile/newsight">New Sighting</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" id="login" href="/auth/logout">Logout</a>
+      </li>
+    <%} else {%>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/auth/signup">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" id="login" href="/auth/login">Login</a>
+      </li>
+    <%}%>
+      
+  </ul>
+</nav>

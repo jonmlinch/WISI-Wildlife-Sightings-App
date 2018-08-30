@@ -17,6 +17,13 @@ router.get('/signup', function(req, res){
 	res.render('auth/signup') //Tells what to show when someone goes to signup page
 });
 
+router.get('/logout', function(req, res){
+	console.log('Log out successful')
+	req.logout();
+	req.flash('Success', 'You successfully logged out');
+	res.redirect('/');
+})
+
 
 //create POST routes
 router.post('/signup', function(req, res){

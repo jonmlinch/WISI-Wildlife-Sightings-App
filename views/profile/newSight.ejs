@@ -1,0 +1,67 @@
+<h1>This is where you can enter new sightings</h1>
+
+<form method="POST" action="/profile/newsight">
+	
+	<p class="h4 mb-4">New Sighting</p>
+
+	<p><u>First a little about your trip</u></p>
+
+	<div class="form-row mb-4">
+		<div class="col">
+			<label>Group Size</label>
+			<select class="form-control" name="group_size" placeholder="Group Size">
+		      <option>1</option>
+		      <option>2</option>
+		      <option>3</option>
+		      <option>4</option>
+		      <option>5</option>
+		      <option>6</option>
+		      <option>7</option>
+		      <option>8</option>
+		      <option>9</option>
+		      <option>10</option>
+		      <option>More than 10</option>
+		    </select>
+		</div>
+		<div class="col">
+			<label>Activity:</label>
+			<select class="form-control" name="activity" placeholder="What activity?">
+		      <option>Hunting</option>
+		      <option>Hiking</option>
+		      <option>Climbing</option>
+		      <option>Fishing</option>
+		      <option>Camping</option>
+		      <option>Biking</option>
+		      <option>Other...</option>
+		    </select>
+		</div>
+		<div class="col">
+			<label>Time Spent Doing Your Activty</label>
+			<input type="text" class="form-control" name="effort_time" placeholder="In hours please!">
+		</div>
+	</div>
+	<div class="form-row mb-4">
+		<div class="col">
+			<label>Distance Traveled (miles)</label>
+			<input type="number" class="form-control" name="effort_distance">
+		</div>
+		<div class="col">
+			<label>Start location (Trailhead, nearby creek, etc)</label>
+			<input type="text" class="form-control" name="start_point">
+		</div>
+		<div class="col">
+			<label>Ending location (Trailhead, nearby creek, etc)</label>
+			<input type="text" class="form-control" name="end_point">
+		</div>
+	</div>
+	<hr>
+
+	<p><u>Now about that sighting</u></p>
+
+	
+	<% include ../partials/wildifeSurvey%>
+
+	<button class="btn btn-info my-4 btn-block" type="submit">Report Your Sighting</button>
+
+
+</form>
