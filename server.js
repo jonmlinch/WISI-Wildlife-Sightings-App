@@ -4,7 +4,8 @@ var express = require('express'); //web framework to allow for routing on webpag
 var ejsLayouts = require('express-ejs-layouts'); //Allows use of ejs format with express
 var flash = require('connect-flash'); //Allows for any error messages I may need
 var passport = require('./config/passportConfig'); //******* MAY NEED TO CHANGE THIS, DON'T FORGET ****** //A method of authentication
-var session = require('express-session'); //Used to create sessions, 
+var session = require('express-session'); //Used to create sessions
+var geocoder = require('geocoder');
 
 //Create express app
 var app = express();
