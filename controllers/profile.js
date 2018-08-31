@@ -19,13 +19,21 @@ router.get('/newsight', loggedIn, function(req, res){
 router.get('/pastsight', loggedIn, function(req, res){
 	db.user.findOne({
 		where: {id: req.user.id},
-		include : [db.wildlife]
+		include: [db.wildlife]
 	}).then(function(userSightings){
 		res.render('profile/pastSight', {user: userSightings})
 	}).catch(function(err){
 		console.log('ERROR WILL ROBINSON!')
 	})
 	
+})
+
+router.get('/edit/:id', loggedIn, function(req, res){
+	db.wildlife.findById(req.params.id).then(function(editSight){
+		res.render('profile/editSightings', { edit: editSight })
+	}).catch(function(err){
+		console.log('DANGER! DANGER!')
+	})
 })
 
 //Define POST routes

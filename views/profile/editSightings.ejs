@@ -1,15 +1,16 @@
-<h1>This is where you can enter new sightings</h1>
+<h1>This is where edits will happen</h1>
 
 <form id="new-sight" action="/profile/newsight" method="POST">
 	
-	<p class="h4 mb-4">New Sighting</p>
+	<p class="h4 mb-4">Edit Your Sighting</p>
 	
-	<p><u>First a little about your trip</u></p>
+	<p><u>Edit your trip</u></p>
 
 	<div class="form-row mb-4">
 		<div class="col">
 			<label>Group Size</label>
 			<select class="form-control" name="group_size" placeholder="Group Size">
+			  <option selected><%= edit.group_size%></option>
 		      <option>1</option>
 		      <option>2</option>
 		      <option>3</option>
@@ -26,6 +27,7 @@
 		<div class="col">
 			<label>Activity:</label>
 			<select class="form-control" name="activity" placeholder="What activity?">
+			  <option selected><%= edit.activity %></option>
 		      <option>Hunting</option>
 		      <option>Hiking</option>
 		      <option>Climbing</option>
@@ -37,44 +39,45 @@
 		</div>
 		<div class="col">
 			<label>Time Spent Doing Your Activty</label>
-			<input type="text" class="form-control" name="effort_time" placeholder="In hours please!">
+			<input type="text" class="form-control" name="effort_time" placeholder="In hours please!" value="<%= edit.effort_time %>">
 		</div>
 	</div>
 	<div class="form-row mb-4">
 		<div class="col">
 			<label>Distance Traveled (miles)</label>
-			<input type="number" class="form-control" name="effort_distance">
+			<input type="number" class="form-control" name="effort_distance" value="<%= edit.effort_distance %>">
 		</div>
 		<div class="col">
 			<label>Start location (Trailhead, nearby creek, etc)</label>
-			<input type="text" class="form-control" name="start_point">
+			<input type="text" class="form-control" name="start_point" value="<%= edit.start_point %>">
 		</div>
 		<div class="col">
 			<label>Ending location (Trailhead, nearby creek, etc)</label>
-			<input type="text" class="form-control" name="end_point">
+			<input type="text" class="form-control" name="end_point" value="<%= edit.end_point %>">
 		</div>
 	</div>
 	<hr>
 
-<p><u>Now about that sighting</u></p>
+<p><u>Edit your sighting</u></p>
 	<div class="form-row mb-4">
 		<div class="col">
 			<label>Date seen:</label>
-			<input type="date" class="form-control" name="date">
+			<input type="date" class="form-control" name="date" value="<%= edit.date %>">
 		</div>
 		<div class="col">
 			<label>Time seen:</label>
-			<input type="time" class="form-control" name="time">
+			<input type="time" class="form-control" name="time" value="<%= edit.time %>">
 		</div>
 		<div class="col">
 			<label>General Location Seen:</label>
-			<input type="text" class="form-control" name="general_location">
+			<input type="text" class="form-control" name="general_location" value="<%= edit.general_location%>">
 		</div>
 	</div>
 	<div class="form-row mb-4">
 		<div class="col">
 			<label>Species</label>
 			<select class="form-control" name="species">
+			  <option selected><%= edit.species %></option>
 		      <option>White-Tailed Deer</option>
 		      <option>Mule Deer</option>
 		      <option>Elk</option>
@@ -86,11 +89,12 @@
 		</div>
 		<div class="col">
 			<label>Number Seen</label>
-			<input type="number" class="form-control" name="animal_count">
+			<input type="number" class="form-control" name="animal_count" value="<%= edit.animal_count%>">
 		</div>
 		<div class="col">
 			<label>Sex</label>
 			<select class="form-control" name="sex">
+			  <option selected><%= edit.sex %></option>
 		      <option>Male</option>
 		      <option>Female</option>
 		      <option>Unknown</option>
@@ -99,6 +103,7 @@
 		<div class="col">
 			<label>Age</label>
 			<select class="form-control" name="age">
+			  <option selected><%= edit.age %></option>
 		      <option>Adult</option>
 		      <option>Sub-Adult</option>
 		      <option>Juvenile</option>
@@ -112,7 +117,7 @@
 	<div class="form-row mb-4">
 		<div class="col">
 			<label>Comments</label>
-			<textarea class="form-control" name="comments" rows="3"></textarea>
+			<textarea class="form-control" name="comments" rows="3"><%= edit.comments%></textarea>
 		</div>
 	</div>
 
@@ -120,4 +125,38 @@
 
 </form>
 
-<script src="/js/mapscript.js"></script>
+<script type="text/javascript">
+	//var wildlife = ['<%= edit.latitude %>', '<%= edit.longitude %>'];
+	
+	//console.log('wildlife is', wildlife);
+	function initMap(){
+		console.log("initMap is running")
+		  var myLatlng = new google.maps.LatLng(<%= edit.latitude %>, <%= edit.longitude %> );
+
+		  var map = new google.maps.Map(document.getElementById('map'), {
+		    center: myLatlng,
+		    zoom: 8
+		  });
+
+		  var bounds = new google.maps.LatLngBounds();
+
+		  console.log('map finished running')
+	
+		   
+		  function loadMarkers(){
+		  		console.log('trying to run loadMarker')
+		        var position = new google.maps.LatLng(<%= edit.latitude %>, <%= edit.longitude %>);
+
+		          //Some code here to extend bounds if needed
+		          bounds.extend( position );
+
+		          var marker = new google.maps.Marker({
+		            animation: google.maps.Animation.DROP,
+		            map: map,
+		            position: position
+		          }) // end marker crea 
+		}
+		loadMarkers();
+	}	
+
+</script>
