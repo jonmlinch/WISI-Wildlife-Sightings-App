@@ -24,7 +24,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       age: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       general_location: {
         type: Sequelize.STRING

@@ -1,1 +1,41 @@
+
 <h1>This will show all past sightings</h1>
+
+<div id="map">
+
+</div>
+ <br>
+
+<h3><%= user.firstname %>'s Sightings</h3>
+<hr>
+
+<% user.wildlife.forEach(function(sighting){%>
+	<div class="card">
+	  <div class="card-body">
+	    <h5 class="card-title"><%= sighting.species %></h5>
+	    <h6 class="card-subtitle mb-2 text-muted"><%= sighting.date %></h6>
+	    <p class="card-text"><%= sighting.general_location %></p>
+	    <a href="#" class="card-link">Maybe this could highlight on map</a>
+	    <a href="#" class="card-link">maybe this could link to some info about species</a>
+	  </div>
+	</div>
+	<br>
+<%})%>
+
+
+
+
+
+<script src="/js/pastSightMap.js">
+	<%- location =[];
+
+		   user.wildlife.forEach(function(locate){
+		    var mark = [locate.latitude, locate.longitude];
+		    location.push(mark);
+		    console.log ("THIS IS THE LOCATION: ", location);
+		  });%>
+</script>
+
+
+
+

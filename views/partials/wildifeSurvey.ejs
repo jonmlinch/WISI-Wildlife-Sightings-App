@@ -1,63 +1,114 @@
-<div class="form-row mb-4">
-	<div class="col">
-		<label>Date seen:</label>
-		<input type="date" class="form-control" name="date">
+<p><u>First a little about your trip</u></p>
+
+	<div class="form-row mb-4">
+		<div class="col">
+			<label>Group Size</label>
+			<select class="form-control" name="group_size" placeholder="Group Size">
+		      <option>1</option>
+		      <option>2</option>
+		      <option>3</option>
+		      <option>4</option>
+		      <option>5</option>
+		      <option>6</option>
+		      <option>7</option>
+		      <option>8</option>
+		      <option>9</option>
+		      <option>10</option>
+		      <option>More than 10</option>
+		    </select>
+		</div>
+		<div class="col">
+			<label>Activity:</label>
+			<select class="form-control" name="activity" placeholder="What activity?">
+		      <option>Hunting</option>
+		      <option>Hiking</option>
+		      <option>Climbing</option>
+		      <option>Fishing</option>
+		      <option>Camping</option>
+		      <option>Biking</option>
+		      <option>Other...</option>
+		    </select>
+		</div>
+		<div class="col">
+			<label>Time Spent Doing Your Activty</label>
+			<input type="text" class="form-control" name="effort_time" placeholder="In hours please!">
+		</div>
 	</div>
-	<div class="col">
-		<label>Time seen:</label>
-		<input type="time" class="form-control" name="time">
+	<div class="form-row mb-4">
+		<div class="col">
+			<label>Distance Traveled (miles)</label>
+			<input type="number" class="form-control" name="effort_distance">
+		</div>
+		<div class="col">
+			<label>Start location (Trailhead, nearby creek, etc)</label>
+			<input type="text" class="form-control" name="start_point">
+		</div>
+		<div class="col">
+			<label>Ending location (Trailhead, nearby creek, etc)</label>
+			<input type="text" class="form-control" name="end_point">
+		</div>
 	</div>
-	<div class="col">
-		<label>General Location Seen:</label>
-		<input type="text" class="form-control" name="end_point">
+	<hr>
+
+<p><u>Now about that sighting</u></p>
+	<div class="form-row mb-4">
+		<div class="col">
+			<label>Date seen:</label>
+			<input type="date" class="form-control" name="date">
+		</div>
+		<div class="col">
+			<label>Time seen:</label>
+			<input type="time" class="form-control" name="time">
+		</div>
+		<div class="col">
+			<label>General Location Seen:</label>
+			<input type="text" class="form-control" name="general_location">
+		</div>
 	</div>
-</div>
-<div class="form-row mb-4">
-	<div class="col">
-		<label>Species</label>
-		<select class="form-control" name="species">
-	      <option>White-Tailed Deer</option>
-	      <option>Mule Deer</option>
-	      <option>Elk</option>
-	      <option>Moose</option>
-	      <option>Black Bear</option>
-	      <option>Mountain Lion</option>
-	      <option>Wolf</option>
-	    </select>
+	<div class="form-row mb-4">
+		<div class="col">
+			<label>Species</label>
+			<select class="form-control" name="species">
+		      <option>White-Tailed Deer</option>
+		      <option>Mule Deer</option>
+		      <option>Elk</option>
+		      <option>Moose</option>
+		      <option>Black Bear</option>
+		      <option>Mountain Lion</option>
+		      <option>Wolf</option>
+		    </select>
+		</div>
+		<div class="col">
+			<label>Number Seen</label>
+			<input type="number" class="form-control" name="animal_count">
+		</div>
+		<div class="col">
+			<label>Sex</label>
+			<select class="form-control" name="sex">
+		      <option>Male</option>
+		      <option>Female</option>
+		      <option>Unknown</option>
+		    </select>
+		</div>
+		<div class="col">
+			<label>Age</label>
+			<select class="form-control" name="age">
+		      <option>Adult</option>
+		      <option>Sub-Adult</option>
+		      <option>Juvenile</option>
+		      <option>Young of Year</option>
+		    </select>
+		</div>
 	</div>
-	<div class="col">
-		<label>Number Seen</label>
-		<input type="number" class="form-control" name="animal_count">
+	<div class="form-row mb-4">
+		<div id="map"></div>
 	</div>
-	<div class="col">
-		<label>Sex</label>
-		<select class="form-control" name="sex">
-	      <option>Male</option>
-	      <option>Female</option>
-	      <option>Unknown</option>
-	    </select>
+	<div class="form-row mb-4">
+		<div class="col">
+			<label>Comments</label>
+			<textarea class="form-control" name="comments" rows="3"></textarea>
+		</div>
 	</div>
-	<div class="col">
-		<label>Age</label>
-		<select class="form-control" name="age">
-	      <option>Adult</option>
-	      <option>Sub-Adult</option>
-	      <option>Juvenile</option>
-	      <option>Young of Year</option>
-	    </select>
-	</div>
-</div>
-<div class="form-row mb-4">
-	<div id="map"></div>
-</div>
-<div class="form-row mb-4">
-	<div class="col">
-		<label>Comments</label>
-		<textarea class="form-control" name="comments" rows="3"></textarea>
-	</div>
-</div>
 
 
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvnEUGgSPvh2sSXpL1Tq24xI8TFVuSmvg&callback=initMap"
-  type="text/javascript"></script>
-<script src="/js/mapscript.js"></script>
+ 

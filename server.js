@@ -6,10 +6,16 @@ var flash = require('connect-flash'); //Allows for any error messages I may need
 var passport = require('./config/passportConfig'); //******* MAY NEED TO CHANGE THIS, DON'T FORGET ****** //A method of authentication
 var session = require('express-session'); //Used to create sessions
 var geocoder = require('geocoder');
+var db = require('./models')
 
 //Create express app
 var app = express();
 
+//Set up stored session so I don't have to login all the time
+var SequelizeStore = require('connect-session-sequelize')(session.Store);
+var sessionStore = new SequelizeStore({
+  db: db.sequelize
+});
 //Set view engine
 app.set('view engine', 'ejs');
 
@@ -21,8 +27,11 @@ app.use(flash()); //Uses the connect flash module for alerts
 app.use(session({
 	secret: process.env.SECRET,
 	resave: false,
-	saveUninitialized: true
+	saveUninitialized: true,
+  	store: sessionStore,
+  	expire: new Date(Date.now() + (30 * 86400 * 1000))
 }))
+sessionStore.sync(); // creates the sessions table
 app.use(passport.initialize()); //specifies use of passport to authenticate 
 app.use(passport.session()); //specifies use of a passport session
 

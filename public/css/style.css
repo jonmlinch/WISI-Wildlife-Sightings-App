@@ -1,5 +1,11 @@
+body {
+	/*background-color: #6B686D;*/
+	/*background-image: url(http://res.cloudinary.com/surfjon2/image/upload/v1535727767/topo-background.png);*/
+}
+
 .navbar{
-	background-color: black;
+	background-color: #6B686D;
+	/*background-image: url(http://res.cloudinary.com/surfjon2/image/upload/v1535727767/topo-background.png);*/
 }
 
 .nav-item {

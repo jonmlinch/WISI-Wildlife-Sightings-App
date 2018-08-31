@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     species: DataTypes.STRING,
     animal_count: DataTypes.INTEGER,
     sex: DataTypes.STRING,
-    age: DataTypes.INTEGER,
+    age: DataTypes.STRING,
     general_location: DataTypes.STRING,
     latitude: DataTypes.STRING,
     longitude: DataTypes.STRING,
