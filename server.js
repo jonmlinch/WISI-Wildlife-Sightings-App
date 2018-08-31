@@ -55,7 +55,7 @@ app.use('/profile', require('./controllers/profile')) //Allows access to the pro
 
 
 //Listen
-app.listen(3000, function(){ //Allows me to listen to the smooth sound of port 3000
+app.listen(process.env.PORT || 3000, function(){ //Allows me to listen to the smooth sound of port 3000
 	console.log("You are now listening to the smooth sounds of Port 3000 in morning")
 })
 
