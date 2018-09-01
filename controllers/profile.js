@@ -48,6 +48,19 @@ router.post('/newsight', loggedIn, function(req, res){
 	})
 })
 
+//Define PUT route for edit page
+router.put('/edit/:id', loggedIn, function(req, res){
+	console.log('THIS IS THE BACKEND', req.params.id)
+	db.wildlife.update({
+		where: req.params.id
+	}).then(function(update){
+		res.send('SUCCESSFUL')
+	}).catch(function(err){
+		console.log('WELL THAT DID NOT WORK!')
+	});
+})
+
+
 
 
 module.exports = router;

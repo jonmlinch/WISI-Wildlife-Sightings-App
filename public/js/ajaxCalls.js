@@ -21,4 +21,24 @@ $(document).ready(function(){
 			console.log('error', err)
 		})
 	})
+
+	$('#edit-sight').submit(function(e){
+		e.preventDefault();
+
+		var latitude = marker.getPosition().lat();
+  		var longitude = marker.getPosition().lng();
+		var formData = $(this).serialize() + "&latitude=" + latitude + "&longitude=" + longitude;
+
+		console.log('This is just before the ajax call')
+		$.ajax({
+			url:$(this).attr('action'),
+			method: 'PUT',
+			data: formData
+		}).done(function(res){
+			console.log('success', res)
+			window.location = '/profile/pastsight'
+		}).fail(function(err){
+			console.log('error', err)
+		})
+	})
 })

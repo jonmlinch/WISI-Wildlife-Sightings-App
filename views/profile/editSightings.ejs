@@ -1,6 +1,6 @@
 <h1>This is where edits will happen</h1>
 
-<form id="new-sight" action="/profile/newsight" method="POST">
+<form id="edit-sight" action="/profile/edit/<%= edit.id %>" method="PUT">
 	
 	<p class="h4 mb-4">Edit Your Sighting</p>
 	
@@ -127,7 +127,7 @@
 
 <script type="text/javascript">
 	//var wildlife = ['<%= edit.latitude %>', '<%= edit.longitude %>'];
-	
+	var marker;
 	//console.log('wildlife is', wildlife);
 	function initMap(){
 		console.log("initMap is running")
@@ -150,7 +150,7 @@
 		          //Some code here to extend bounds if needed
 		          bounds.extend( position );
 
-		          var marker = new google.maps.Marker({
+		         marker = new google.maps.Marker({
 		            animation: google.maps.Animation.DROP,
 		            map: map,
 		            position: position
