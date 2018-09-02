@@ -38,7 +38,6 @@ router.get('/edit/:id', loggedIn, function(req, res){
 
 //Define POST routes
 router.post('/newsight', loggedIn, function(req, res){
-	console.log(req.body)
 	req.body.userId = req.user.id
 	db.wildlife.create(req.body).then(function(newest){
 		res.send('success')
@@ -50,7 +49,6 @@ router.post('/newsight', loggedIn, function(req, res){
 
 //Define PUT route for edit page
 router.put('/edit/:id', loggedIn, function(req, res){
-	console.log('THIS IS THE BACKEND', req.body)
 	db.wildlife.update(req.body, {
 		where: {id: req.params.id}
 	}).then(function(update){
