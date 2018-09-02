@@ -11,7 +11,6 @@ The aim of this project is to provide a platform that would allow users to repor
 * Sequelize models and migration for creating user accounts and widlife sighting information
 * Setting for PostgreSQL
 * Passport and Passport-Local for authentication
-* The use of OAuth to allow login from other account (i.e. Facebook, Google, etc.)
 * Express sessions to keep user loggedin from page to page
 * Connect-Flash for error/success messages
 * Bcrypt for hashing passwords preventing access to sensitive information
@@ -31,7 +30,6 @@ The aim of this project is to provide a platform that would allow users to repor
 | dob | Date | - |
 | admin | Boolean | Admin or regular user |
 
-> NOTE: Change these fields in both the model and migration files before running sequelize db:migrate
 
 ### Default Routes Supplied
 
