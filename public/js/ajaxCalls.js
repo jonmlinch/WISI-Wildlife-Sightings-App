@@ -41,4 +41,20 @@ $(document).ready(function(){
 			console.log('error', err)
 		})
 	})
+
+	$('#delete').click(function(e){
+		e.preventDefault();
+		console.log("You want to delete me?");
+
+		$.ajax({
+			url: $(this).attr('href'),
+			method: 'DELETE',
+		}).done(function(res){
+			console.log('success', res)
+			window.location = '/profile/pastsight'
+		}).fail(function(err){
+			console.log('error', err)
+		})
+
+	})
 })

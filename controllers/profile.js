@@ -50,14 +50,32 @@ router.post('/newsight', loggedIn, function(req, res){
 
 //Define PUT route for edit page
 router.put('/edit/:id', loggedIn, function(req, res){
-	console.log('THIS IS THE BACKEND', req.params.id)
-	db.wildlife.update({
-		where: req.params.id
+	console.log('THIS IS THE BACKEND', req.body)
+	db.wildlife.update(req.body, {
+		where: {id: req.params.id}
 	}).then(function(update){
 		res.send('SUCCESSFUL')
 	}).catch(function(err){
 		console.log('WELL THAT DID NOT WORK!')
 	});
+})
+
+//Define DELETE route
+router.delete('/:id', loggedIn, function(req, res){
+	res.send(req.params.id)
+	db.wildlife.findOne({
+		where: {id: req.params.id}
+	}).then(function(deleteVictim){
+		db.wildlife.destroy({
+			where: {id: deleteVictim.id}
+		}).then(function(deleted){
+			res.send('YOU DELETED SOMETHING')
+		}).catch(function(err){
+			res.send('YOU FAILED TO DELETE')
+		})
+	}).catch(function(err){
+		res.send('THAT IS A NO GO')
+	})
 })
 
 

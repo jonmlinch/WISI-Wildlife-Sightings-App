@@ -1,6 +1,6 @@
 body {
-	/*background-color: #6B686D;*/
-	/*background-image: url(http://res.cloudinary.com/surfjon2/image/upload/v1535727767/topo-background.png);*/
+	background-color: #5A5A5B;
+	background-image: url(http://res.cloudinary.com/surfjon2/image/upload/v1535727767/topo-background.png);
 }
 
 .navbar{
@@ -25,5 +25,6 @@ color: black;
 
 #map {
 	height: 800px;
-	width: 1100px;
+	width: 1120px;
 }
+
