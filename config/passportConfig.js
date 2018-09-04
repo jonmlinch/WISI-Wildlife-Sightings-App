@@ -13,7 +13,7 @@ var db = require('../models');
 //serialized/deserialize functions allow passport to determine what user info to keep for each session (serialize) and what user info to authenticate during changes (deserialize)
 
 passport.serializeUser(function(user, callback){
-	callback(null, user.email); //The callback is the "done" function and tells passport that we are tracking the user based on user Id
+	callback(null, user.id); //The callback is the "done" function and tells passport that we are tracking the user based on user Id
 });
 
 passport.deserializeUser(function(id, callback){

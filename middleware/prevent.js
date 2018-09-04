@@ -4,7 +4,9 @@ module.exports = function(req, res, next){
 		req.flash('Please login to access your profile!')
 		res.redirect('/auth/login')
 	}
+	else{
+		next();
+	}
 	
-	next();
 	
 }

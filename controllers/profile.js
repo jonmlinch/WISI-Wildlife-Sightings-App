@@ -8,18 +8,8 @@ var router = express.Router();
 var loggedIn = require('../middleware/prevent');
 
 //Define GET routes
-router.get('/', loggedIn, function(req, res){ //Adding the loggedIn middleware checks if they are logged before passing to profile page
-	console.log("THIS IS THE AUTO LOGIN BODY:", req.body)
-db.user.findOne({
-		where: {email: req.user.email}
-	}).then(function(userSightings){
-		res.render('profile/pastSight')
-	}).catch(function(err){
-		console.log('ERROR WILL ROBINSON!')
-	})
-});
 
-router.get('/newsight', loggedIn, function(req, res){
+router.get('/newsight', loggedIn, function(req, res){ //Adding the loggedIn middleware checks if they are logged before passing to profile page
 	res.render('profile/newSight')
 });
 

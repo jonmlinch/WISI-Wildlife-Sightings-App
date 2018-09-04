@@ -26,7 +26,7 @@ router.get('/logout', function(req, res){
 
 
 //create POST routes
-router.post('/signup', function(req, res){
+router.post('/signup', function(req, res, next){
 	console.log(req.body)
 	req.body.admin = false; //For now all accounts will be set to false until I can differentiate abilities and create an avenue to become an admin ---> maybe special password for admin?
 	db.user.findOrCreate({ //Tells post route to create an account if it doesn't already exist
@@ -35,13 +35,13 @@ router.post('/signup', function(req, res){
 		}).spread(function(user, newUser){ //First argument is the user info, second is a boolean telling whether a new entry was created
 			if(newUser){ //This if statement tells what to do if a new user is created
 				passport.authenticate('local', { //On the login post, I want to authenticate using the local authentication
-					successRedirect: '/profile', //This is where I want to go if successful
+					successRedirect: '/profile/pastsight', //This is where I want to go if successful
 					successFlash: 'Welcome back, ' + db.user.firstname, //Display this message upon login
 					failureRedirect: '/auth/login', //This where I want to go if login fails
 					failureFlash: 'email or password incorrect, please try again!' //Display this message if failed login
-				})(req, res);
-				console.log('T or F - A new user was created ', newUser)
-				res.redirect('/profile') //Redirect to profile page if a new user was created
+				})(req, res, next);
+				// console.log('T or F - A new user was created ', newUser)
+				// res.redirect('/profile/pastsight') //Redirect to profile page if a new user was created
 			} else{
 				console.log('NEW USER NOT LOGGED IN')
 				req.flash('Email already in use. Please login to see your profile.')
