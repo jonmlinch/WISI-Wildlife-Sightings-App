@@ -17,7 +17,7 @@
 		    <h6 class="card-subtitle mb-2 text-muted"><%= sighting.date %></h6>
 		    <p class="card-text" id="card-location"><%= sighting.general_location %></p>
 		    <a href="/profile/edit/<%= sighting.id %>" class="btn btn-warning">Edit</a>
-		    <button class="btn btn-danger" id="delete">Delete</button>
+		    <a href="/profile/<%= sighting.id %>" id="delete" class="btn btn-danger delete-btn">Delete</a>
 		  </div>
 		</div>
 		<br>

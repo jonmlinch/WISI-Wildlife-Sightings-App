@@ -42,7 +42,7 @@ $(document).ready(function(){
 		})
 	})
 
-	$('#delete').click(function(e){
+	$('.delete-btn').click(function(e){
 		e.preventDefault();
 		console.log("You want to delete me?");
 
