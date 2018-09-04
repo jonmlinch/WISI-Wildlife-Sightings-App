@@ -26,6 +26,9 @@ module.exports = {
       admin: {
         type: Sequelize.BOOLEAN
       },
+      gender: {
+        type: Sequelize.STRING
+      },
       image: {
         type: Sequelize.STRING
       },
