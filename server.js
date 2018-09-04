@@ -59,8 +59,3 @@ app.listen(process.env.PORT || 3000, function(){ //Allows me to listen to the sm
 	console.log("You are now listening to the smooth sounds of Port 3000 in morning")
 })
 
-
-
-//Also to do:
-//set up databases (user, user wildlife inputs)
-//connet databases

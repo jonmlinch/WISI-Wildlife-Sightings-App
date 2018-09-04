@@ -13,7 +13,7 @@ var db = require('../models');
 //serialized/deserialize functions allow passport to determine what user info to keep for each session (serialize) and what user info to authenticate during changes (deserialize)
 
 passport.serializeUser(function(user, callback){
-	callback(null, user.id); //The callback is the "done" function and tells passport that we are tracking the user based on user Id
+	callback(null, user.email); //The callback is the "done" function and tells passport that we are tracking the user based on user Id
 });
 
 passport.deserializeUser(function(id, callback){
@@ -36,9 +36,11 @@ passport.use(new passportLocalStrategy({ //This is using the username/password l
 			console.log('something does not add up')
 			callback(null, null); //If no match found the run this function
 		} else {
-			console.log('username and password are matching')
+			console.log('THE FOUND USER IS:', foundUser)
 			callback(null, foundUser); //If both username and password match then return the user's information
 		}
+	}).catch(function(err){
+		callback(err, null);
 	})
 }))
 

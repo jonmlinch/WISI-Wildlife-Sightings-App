@@ -1,10 +1,7 @@
-<h1>This is where edits will happen</h1>
-
-<form id="edit-sight" action="/profile/edit/<%= edit.id %>" method="PUT">
+<div class="container">
+	<form id="edit-sight" action="/profile/edit/<%= edit.id %>" method="PUT">
 	
-	<p class="h4 mb-4">Edit Your Sighting</p>
-	
-	<p><u>Edit your trip</u></p>
+	<h2 class="mb-4" id="editsight-head"><strong>Edit Sighting</strong></h2>	
 
 	<div class="form-row mb-4">
 		<div class="col">
@@ -124,6 +121,8 @@
 	<button class="btn btn-info my-4 btn-block" type="submit">Report Your Sighting</button>
 
 </form>
+</div>
+
 
 <script type="text/javascript">
 	//var wildlife = ['<%= edit.latitude %>', '<%= edit.longitude %>'];

@@ -34,9 +34,16 @@ router.post('/signup', function(req, res){
 		defaults: req.body //inputs anything from req.body that needs to be filled in in my model
 		}).spread(function(user, newUser){ //First argument is the user info, second is a boolean telling whether a new entry was created
 			if(newUser){ //This if statement tells what to do if a new user is created
+				passport.authenticate('local', { //On the login post, I want to authenticate using the local authentication
+					successRedirect: '/profile', //This is where I want to go if successful
+					successFlash: 'Welcome back, ' + db.user.firstname, //Display this message upon login
+					failureRedirect: '/auth/login', //This where I want to go if login fails
+					failureFlash: 'email or password incorrect, please try again!' //Display this message if failed login
+				})(req, res);
 				console.log('T or F - A new user was created ', newUser)
-				res.redirect('/profile/pastSight') //Redirect to profile page if a new user was created
+				res.redirect('/profile') //Redirect to profile page if a new user was created
 			} else{
+				console.log('NEW USER NOT LOGGED IN')
 				req.flash('Email already in use. Please login to see your profile.')
 				res.redirect('/auth/login') //Redirect to login page if account already exists
 			}
@@ -46,7 +53,7 @@ router.post('/signup', function(req, res){
 });
 
 router.post('/login', passport.authenticate('local', { //On the login post, I want to authenticate using the local authentication
-	successRedirect: '/profile/pastSight', //This is where I want to go if successful
+	successRedirect: '/profile/pastsight', //This is where I want to go if successful
 	successFlash: 'Welcome back, ' + db.user.firstname, //Display this message upon login
 	failureRedirect: '/auth/login', //This where I want to go if login fails
 	failureFlash: 'email or password incorrect, please try again!' //Display this message if failed login

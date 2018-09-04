@@ -1,29 +1,30 @@
-<nav class="navbar shadow-lg sticky-top navbar-expand-lg navbar-dark bg-dark">
-  <a  href="/" id="logo-anchor" class="navbar-brand"><img id="logo" src="http://res.cloudinary.com/surfjon2/image/upload/c_scale,h_77,w_214/v1535854874/wisi-logo-v2.png"></a>  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class = "collapse navbar-collapse justify-content-end" id="navbarNav">
-    <ul class="navbar-nav">
-      <%if(currentUser){%>
-        <li class="nav-item">
-          <a class="nav-link active" href="/profile/newsight">New Sighting</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/profile/pastsight">Past Sightings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" id="login" href="/auth/logout">Logout</a>
-        </li>
-      <%} else {%>
-        <li class="nav-item">
-          <a class="nav-link active" href="/auth/signup">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" id="login" href="/auth/login">Login</a>
-        </li>
-      <%}%>
-    </ul>    
-  </div>
-</nav>
-
+<div>
+  <nav class="navbar shadow-lg sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <a  href="/" id="logo-anchor" class="navbar-brand"><img id="logo" src="http://res.cloudinary.com/surfjon2/image/upload/c_scale,h_77,w_214/v1535854874/wisi-logo-v2.png"></a>  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class = "collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <%if(currentUser){%>
+          <li class="nav-item">
+            <a class="nav-link active" id="jon" href="/profile/newsight">New Sighting</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" id="jon2" href="/profile/pastsight">Past Sightings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" id="jon3" id="login" href="/auth/logout">Logout</a>
+          </li>
+        <%} else {%>
+          <li class="nav-item">
+            <a class="nav-link active" id="jon4" href="/auth/signup">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" id="jon5" id="login" href="/auth/login">Login</a>
+          </li>
+        <%}%>
+      </ul>    
+    </div>
+  </nav>
+</div>

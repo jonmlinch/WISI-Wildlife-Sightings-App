@@ -2,20 +2,87 @@ body {
 	background-color: #5A5A5B;
 }
 
-label {
+h2 {
 	color: white;
 	text-shadow: 2px 2px black;
+	text-align: center;
+	margin-top: 50px;
+}
+
+label {
+	text-shadow: 2px 2px black;
+	color: white;
 }
 
 hr {
 	color: white;
 }
 
+a {
+	margin: 0;
+}
 
+p {
+	text-shadow: 2px 2px black;
+	color: white;
+}
+
+small {
+	color: #F7F7F7;
+}
+
+button {
+	text-shadow: 2px 2px black
+}
+
+.wisi {
+	text-shadow: 2px 2px black;
+	color: white;
+}
+
+.nav-item {
+	text-shadow: 2px 2px black;
+	font-color: white;
+}
+
+#jon:hover, #jon2:hover, #jon3:hover, #jon4:hover, #jon5:hover {
+	background-color: #BBBBBB;
+	color: black;
+	text-shadow: 1px 1px #5A5A5B;
+}
 
 .navbar{
 	background-color: #3F3F40;
-	/*overflow: hidden;*/
+	overflow: hidden;
+}
+
+#pic-container {
+	margin: 0;
+}
+
+#home-logo {
+	width: 50%;
+	height: auto;
+	margin-right: 10px;
+	margin-top: 30px;
+	margin-left: 25%;
+}
+
+#home-pic-div {
+	background-color: black;
+	height: 350px;
+	overflow: hidden;
+	padding-bottom: 100px;
+}
+
+#home-pic {
+	width: 100%;
+	height: auto;
+}
+
+#pastMap {
+	height: 500px;
+	width: 100%;
 }
 
 #background-image {
@@ -24,15 +91,26 @@ hr {
 	opacity: 0.4;
 }
 
-#login {
+#signup-page {
+	margin: 50px;
+}
 
+#signup {
+	margin: 0;
+}
+
+#signin-page {
+	margin: 50px;
+}
+
+#signin {
+	margin: 0;
 }
 
 #logo {
 	height: 60%;
 	width: 60%;
 	margin: 0;
-	/*padding-right: 10px;*/
 }
 
 
@@ -41,8 +119,12 @@ hr {
 	width: 100%;
 }
 
-#newsight-head {
-	color: white;
-	text-shadow: 2px 2px black;
-	text-align: center;
+#entry {
+	text-transform: capitalize;
 }
+
+#card-location {
+	text-shadow: 0px 0px white;
+	color: black;
+}
+

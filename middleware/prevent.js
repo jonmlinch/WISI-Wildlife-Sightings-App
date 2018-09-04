@@ -3,7 +3,8 @@ module.exports = function(req, res, next){
 		console.log('You are not logged in')
 		req.flash('Please login to access your profile!')
 		res.redirect('/auth/login')
-	} else {
-		next()
 	}
+	
+	next();
+	
 }
