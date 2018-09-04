@@ -57,7 +57,7 @@ router.put('/edit/:id', loggedIn, function(req, res){
 
 //Define DELETE route
 router.delete('/:id', loggedIn, function(req, res){
-	res.send(req.params.id)
+	console.log('THIS IS THE REQ PARAM: ', req.params.id)
 	db.wildlife.findOne({
 		where: {id: req.params.id}
 	}).then(function(deleteVictim){

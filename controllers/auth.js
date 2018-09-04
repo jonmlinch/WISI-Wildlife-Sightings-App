@@ -40,8 +40,6 @@ router.post('/signup', function(req, res, next){
 					failureRedirect: '/auth/login', //This where I want to go if login fails
 					failureFlash: 'email or password incorrect, please try again!' //Display this message if failed login
 				})(req, res, next);
-				// console.log('T or F - A new user was created ', newUser)
-				// res.redirect('/profile/pastsight') //Redirect to profile page if a new user was created
 			} else{
 				console.log('NEW USER NOT LOGGED IN')
 				req.flash('Email already in use. Please login to see your profile.')
