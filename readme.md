@@ -77,7 +77,7 @@ The aim of this project is to provide a platform that would allow users to repor
 
 #### 1. Visit the site and find "Sign Up" or "Login"
 
-![alt text](wisiassets/wisihomepage.png)
+![alt text](http://wisiassets/wisihomepage.png)
 
 #### 2. Install node modules from `package.json`
 
