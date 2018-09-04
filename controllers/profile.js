@@ -9,7 +9,7 @@ var loggedIn = require('../middleware/prevent');
 
 //Define GET routes
 
-router.get('/newsight', loggedIn, function(req, res){ //Adding the loggedIn middleware checks if they are logged before passing to profile page
+router.get('/newsight', loggedIn, function(req, res){ 
 	res.render('profile/newSight')
 });
 
@@ -72,8 +72,5 @@ router.delete('/:id', loggedIn, function(req, res){
 		res.send('THAT IS A NO GO')
 	})
 })
-
-
-
 
 module.exports = router;
