@@ -19,7 +19,7 @@ The aim of this project is to provide a platform that would allow users to repor
 ### User Model
 
 | Column Name | SQL Type | Notes							|
-|_____________|__________|__________________________________|
+|-------------|----------|----------------------------------|
 | id | Integer | Serial primary key|
 | createdAt | Date | Automatically generated |
 | updatedAt | Date | Automatically generated |
@@ -34,7 +34,7 @@ The aim of this project is to provide a platform that would allow users to repor
 ### Wildlife Model
 
 | Column Name | SQL Type | Notes							|
-|_____________|__________|__________________________________|
+|-------------|----------|----------------------------------|
 | id | Integer | Serial primary key|
 | createdAt | Date | Automatically generated |
 | updatedAt | Date | Automatically generated |
@@ -59,7 +59,7 @@ The aim of this project is to provide a platform that would allow users to repor
 ### Default Routes Supplied
 
 | Method | Path | Location | Purpose |
-|________|________________|______________________|________________________________________|
+|--------|-------------------|----------------------|-------------------------------------------|
 | GET | / | server.js| Home Page|
 | GET | /auth/login| controllers/auth.js | Login form page |
 | POST | /auth/login | controllers/auth.js | Login submission + Redirect to past sightings |
