@@ -1,4 +1,4 @@
-#Citizen Wildlife Science
+# Citizen Wildlife Science
 
 In the field of wildlife biology, often one of the hardest aspects of studying any given species is simply finding it within vast natural landscapes. This issue of detection has been addressed through a variety of techniques from walking transect lines to radio telemetry to use of airplanes for aerial surveys. Each of these methods have their own unique pros and cons which necessitate their use.
 
@@ -6,7 +6,7 @@ One often underutilized method of detection is the ability to survey recreationa
 
 The aim of this project is to provide a platform that would allow users to report their wildlife sightings along with key information which could make their sightings both a great experience and a key scientific contribution.
 
-##What it includes
+## What it includes
 
 * Sequelize models and migration for creating user accounts and widlife sighting information
 * Setting for PostgreSQL
@@ -75,80 +75,37 @@ The aim of this project is to provide a platform that would allow users to repor
 
 ## Steps to use
 
-#### 1. Visit the site and find "Sign Up" or "Login"
+#### 1. Visit the site (https://wisi-app.herokuapp.com/) and you'll be directed to the homepage.
 
-![Home Page](/wisiassets/wisihomepage.png)
+![Home Page](wisi-assets/wisihomepage.png)
 
-#### 2. Install node modules from `package.json`
+#### 2. If you've never visited, click "Sign Up" to create an account.
 
-```
-npm install
-```
+![Signup Page](wisi-assets/wisisignuppage.png)
 
-#### 3. Customize with project name
+#### 3. If you have visited, click "Login" sign into your account.
 
-* Title in the layout.ejs
-* Logo in the navbar
-* Description/Repo link in the package.json
-* Remove auth boilerplate readme content
+![Login Page](wisi-assets/wisiloginpage.png)
 
-#### 4. Create new database for your new project
+#### 4. After logging in or signing up, you will be directed to the past sightings page.
 
-```
-createdb <new_db_name>
-```
+![Past Page](wisi-assets/wisipastsightpage.png)
 
-#### 5. Open `config.json` and change the following:
+#### 5. While on past sightings, you can edit or delete past sightings.
+
+![Edit Page](wisi-assets/wisieditpage.png)
  
- * Change database name to what you created in step 2
- * Set username/password for your local environment
- * Make sure the flavor of SQL matches what you're using
+#### 6. To log a new sighting, click "new sighting" and complete the form. Drag the map marker to mark a location.
 
-> NOTE: If changing from Postgres, you will need different node_modules
+![New Page](wisi-assets/wisinewsightings.png)
 
-#### 6. Check models and migrations for your needs
-
-For example, if you don't need the `Admin` column, you will want to delete it from both the migration and model for the user. Likewise, if you need to add something, add in both files.
-
-#### 7. Run the migrations
-
-```
-sequelize db:migrate
-```
-
-#### 8. Add a `.env` file with a SESSION_SECRET key
-
-This can be set to anything.
+#### 7. That's all there is to it.
 
 
-#### 9. Run your server and make sure everything works
-
-If you have nodemon istalled globally:
-```
-nodemon
-```
-
-Otherwise:
-```
-node index.js
-```
-
-#### 9. Create a new repository for the new project to live in!
-
-* Create a new repository on your personal Github account.
-* Delete the old remote to origin
-* Add new repo as a new location (can also be called origin since we deleted the original origin)
-* PUSH!
-
-```
-git remote remove origin
-git remote add origin <new_repo_link>
-git add .
-git commit -m "Beginning of new project"
-git push origin master
-
->NOTE: Do NOT make commits from the new project to your auth boilerplate! Keep it pristine!!!
 
 ## Next Steps
 
-Assuming that the setup steps went smoothly, now you can add new models/migrations for your new app, and generally just start developing it as if you had started from scratch!
+As time permits, I'd like to add functionality that would allow for mobile location gathering, the ability to see wildlife "hotspots", and the ability to add images.
+
+## Making Changes
+Suggestions are always welcome. Feel free to send pull requests if you feel motivated to do so.
